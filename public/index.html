@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="uploadExample">
+<!--<![endif]-->
+
+<head>
+
+  <!-- Meta-Information -->
+  <!-- etc… -->
+
+  <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
+  <!-- etc… -->
+
+  <!-- Our Website CSS Styles -->
+  <!-- <link rel="stylesheet" href="css/main.css"> -->
+  <style>
+    #thumbnail img {
+      display: block;
+      height: 100px;
+      width: 100px;
+      margin: 2em auto;
+      background-clip: border-box;
+      background-size: cover;
+      border-radius: 50%;
+      border: 3px solid #FFF;
+    }
+
+    body {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body ng-controller="uploadController">
+
+  <div style="text-align:center;">
+
+    <input type="file" file-upload accept="image/*">
+
+    <button type="submit" ng-click="upload()">Upload File</button>
+
+  </div>
+
+  <div id="thumbnail"></div>
+
+  <!-- Vendor: Javascripts -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <!-- Our Website Javascripts -->
+  <script src="./app.js"></script>
+
+</body>
+
+</html>
