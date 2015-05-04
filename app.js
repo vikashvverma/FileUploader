@@ -40,7 +40,7 @@ app.post('/upload', function(req, res) {
 });
 
 
-app.listen(3001, 'localhost', function(err) {
+app.listen(process.env.PORT || 3000, 'localhost', function(err) {
   if (err) {
     console.log(err);
   } else {
