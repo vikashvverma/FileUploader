@@ -32,7 +32,17 @@ angular.module('uploadExample', [])
         $scope.files = data.file;
       })
       $scope.upload = function() {
-        uploadService.upload({user:$scope.user,files:$scope.files});
+        var promise=uploadService.upload({user:$scope.user,files:$scope.files});
+        promise.then(function(data){
+            if(data.status){
+                var a=document.createElement('a');
+                a.href="images/avatar/"+$scope.files.name;
+                a.target="_blank";
+                a.style.marginRight="20px";
+                a.innerHTML="<span>Open "+$scope.files.name+"</sapn>"
+                document.getElementById('uploaded_file').appendChild(a);
+            }
+        });
       };
     });
 
@@ -56,13 +66,13 @@ angular.module('uploadExample', [])
           },
           data:{user:model.user,files:model.files}
         }).success(function(data, status, headers, config){
-          $log.info('File Uploaded Successfully!');
-          alert('File Uploaded Successfully!');
-          return ({status:'success'});
+          $log.info(data);
+          alert(data.info);
+          return data;
         }).error(function(data, status, headers, config){
           $log.error('File could not be uploaded!');
-          alert('File could not be uploaded!');
-          $q.reject({status:'failure'});
+          alert(data.info);
+          $q.reject(data);
         });
       }
     }
