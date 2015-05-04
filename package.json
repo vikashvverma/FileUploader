@@ -4,6 +4,7 @@
   "description": "A simple Node.js + Express + Angular Image Uploader",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "node app.js"
   },
   "repository": {
