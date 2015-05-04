@@ -57,9 +57,11 @@ angular.module('uploadExample', [])
           data:{user:model.user,files:model.files}
         }).success(function(data, status, headers, config){
           $log.info('File Uploaded Successfully!');
+          alert('File Uploaded Successfully!');
           return ({status:'success'});
         }).error(function(data, status, headers, config){
           $log.error('File could not be uploaded!');
+          alert('File could not be uploaded!');
           $q.reject({status:'failure'});
         });
       }
