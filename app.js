@@ -40,10 +40,4 @@ app.post('/upload', function(req, res) {
 });
 
 
-app.listen(process.env.PORT || 3000, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Node Server listening on http://localhost:3001/")
-  }
-})
+app.listen(process.env.PORT || 3000);
